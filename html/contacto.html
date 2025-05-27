@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Página con Testimonios y Contacto</title>
+  <link rel="stylesheet" href="../css/contacto.css" />
+</head>
+<script>
+  document.getElementById('formContacto').addEventListener('submit', function (e) {
+    e.preventDefault(); // Evita recarga de la página
+    document.getElementById('mensajeConfirmacion').style.display = 'block'; // Muestra el mensaje
+    this.reset(); // Limpia los campos del formulario
+  });
+</script>
+
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="../imagenes/491771186_1283413673789625_3239846771567884815_n-removebg-preview.png" alt="Logo" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="qnsomos.HTML">¿quienes somos?</a></li>
+          <li><a href="ofertaA.html">Oferta Académica</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="noticias.html">Noticias</a></li>
+          <li><a href="testimonios.html">Testimonios</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="bienvenida">
+      <h2>Bienvenidos a Nuestra Página de contacto con el Plantel</h2>
+      <p>Nos dedicamos a ofrecer servicios de calidad con atención personalizada.</p>
+      <img src="../imagenes/tttt.jpg" alt="Imagen de bienvenida" />
+    </section>
+
+    <section class="contacto" id="contacto">
+      <h2>Contacto</h2>
+      <div class="contacto-container">
+ <form id="formContacto" class="form-contacto" autocomplete="off">
+  <label for="nombre">Nombre completo</label>
+  <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo" />
+
+  <label for="telefono">Teléfono</label>
+  <input type="tel" id="telefono" name="telefono" required placeholder="Tu número de teléfono" pattern="[0-9+()\-\s]{7,}" title="Ingresa un número válido" />
+
+  <label for="email">Correo electrónico</label>
+  <input type="email" id="email" name="email" required placeholder="Tu correo electrónico" />
+
+  <button type="submit">Enviar</button>
+</form>
+
+<!-- Aquí se mostrará el mensaje abajo -->
+<div id="mensajeConfirmacion" style="display: none; margin-top: 30px; font-size: 1.1em; color: green;">
+  ¡Registro completado! Gracias por contactarnos. Pronto recibirás más información.
+</div>
+
+
+        <div class="info-contacto">
+          <h3>Dirección</h3>
+          <p>Calle Principal 123, Colonia Centro, Ciudad, País</p>
+
+          <h3>Horarios de Atención</h3>
+          <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+          <p>Sábados: 9:00 AM - 2:00 PM</p>
+          <p>Domingos: Cerrado</p>
+
+          <h3>Ubicación</h3>
+          <div class="mapa">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3734.584755354053!2d-100.39443148467422!3d20.56134658629292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d3869a14f3d357%3A0x3cc81d2e5a52245e!2sLos%20Pinos%2C%2076700%20Pedro%20Escobedo%2C%20Qro.!5e0!3m2!1ses!2smx!4v1695817821234!5m2!1ses!2smx" 
+              width="100%" 
+              height="250" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Tu Empresa. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Script para mensaje de confirmación -->
+  <script>
+    document.getElementById('formContacto').addEventListener('submit', function (e) {
+      e.preventDefault(); // Evita que se envíe el formulario realmente
+      alert('¡Registro completado! Gracias por contactarnos. Pronto recibirás más información.');
+      this.reset(); // Limpia el formulario
+    });
+  </script>
+</body>
+</html>

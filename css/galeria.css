@@ -1,0 +1,230 @@
+/* RESET Y BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* VARIABLES */
+:root {
+  --verde: #007a33;
+  --verde-oscuro: #005a2a;
+  --verde-lima: #008c45;
+  --naranja: #ff6f00;
+  --blanco: #ffffff;
+  --gris-claro: #f5f5f5;
+  --sombra: rgba(0, 0, 0, 0.1);
+}
+
+header {
+  background-color: var(--verde);
+  color: var(--blanco);
+  padding: 30px 0;
+  box-shadow: 0 4px 6px var(--sombra-intensa);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  background-color: var(--verde-oscuro);
+}
+
+.logo img {
+  height: 55px;
+  width: auto;
+  margin-right: 20px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 18px;
+  border-radius: 5px;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: var(--naranja);
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px var(--sombra);
+}
+
+
+/* SECCIÓN BIENVENIDA */
+main {
+  padding: 40px 20px;
+}
+
+.bienvenida {
+  background-color: var(--gris-claro);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 8px var(--sombra);
+  margin-bottom: 30px;
+}
+
+.bienvenida h2 {
+  color: var(--verde);
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.bienvenida p {
+  font-size: 1.2em;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* GALERÍA */
+.carreras {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.carrera {
+  background-color: var(--gris-claro);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px var(--sombra);
+  transition: transform 0.3s;
+}
+
+.carrera:hover {
+  transform: translateY(-10px);
+}
+
+.carrera img {
+  width: 100%;
+  max-width: 250px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 3px solid var(--naranja);
+  transition: transform 0.3s;
+}
+
+.carrera img:hover {
+  transform: scale(1.05);
+}
+
+.carrera p {
+  margin-top: 10px;
+  font-size: 1.1em;
+  color: #444;
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--verde);
+  color: var(--blanco);
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .bienvenida img {
+    width: 100%;
+  }
+
+  .carreras {
+    grid-template-columns: 1fr;
+  }
+}
+/* MENÚ ESTILO CECyTEQ */
+.menu-bar {
+  background-color: #006b34; /* Verde oscuro */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+}
+
+.menu-bar .logo img {
+  height: 60px;
+  width: auto;
+}
+
+.menu-bar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.menu-bar nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+  padding: 10px 15px;
+  display: inline-block;
+}
+
+.menu-bar nav ul li a:hover,
+.menu-bar nav ul li a.activo {
+  color: #ffcc00; /* Amarillo suave al pasar o activo */
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .menu-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-bar nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .menu-bar nav ul li {
+    width: 100%;
+  }
+
+  .menu-bar nav ul li a {
+    display: block;
+    width: 100%;
+  }
+}
